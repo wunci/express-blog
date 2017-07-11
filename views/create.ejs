@@ -1,0 +1,34 @@
+<%- include('header') %>
+<div class="container">
+	<!-- <div class="post_user">
+		<div class="post_avator">
+			<% if(user){ %>
+				<img src="/img/<%= user.avator %>" alt="">
+			<% } else{ %>
+				<p>未登录</p>
+			<% } %>
+		</div>
+		<p class="post_avatorname">
+			<% if(user){ %>
+				<%= user.name %>
+			<% } %>
+		</p>
+	</div> -->
+	<form method="post" action="/posts">
+		<div>
+			<label>标题：</label>
+			<input placeholder="标题" type="text" name="title">
+		</div>
+		<div>
+			<label>内容：</label>
+			<textarea name="content" id="" cols="42" rows="10"></textarea>
+		</div>
+		<input type="submit" value="发表">
+	</form>
+</div>
+
+
+
+
+
+<%- include('footer') %>

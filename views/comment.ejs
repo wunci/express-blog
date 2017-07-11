@@ -1,0 +1,30 @@
+<%- include('header') %>
+<div class="container ">
+	
+	<div class="post_list">
+		<ul>
+			<li>
+				<a class="post_list_img" href="/posts?author=<%= post.author %>"> <img class="user_img" src="/img/<%= post.avator %>" alt=""></a>
+				<h3>
+		 			<span><%= post.title %></span>
+		 		</h3>
+		 		<p>
+		 			<span><%= post.content %></span>
+		 		</p>
+				<div class="comment">
+					<p>留言</p>
+					<form action="/posts/<%=  %>/comment">
+						<textarea name="" id="" cols="30" rows="10"></textarea>
+						<input type="submit" value="确认">
+					</form>
+				</div>
+			<li>
+		</ul>
+	</div>
+</div>
+
+
+
+
+
+<%- include('footer') %>

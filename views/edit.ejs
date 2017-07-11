@@ -1,0 +1,22 @@
+<%- include('header') %>
+<div class="container ">
+	
+	<div class="post_list">
+		<ul>
+			<li>
+				<a class="post_list_img" href="/posts?author=<%= post.author %>"> <img class="user_img" src="/img/<%= post.avator %>" alt=""></a>
+				<form method="post" action="/posts/<%= post._id %>/edit">
+					<h3>
+						标题：<input name="title" type="text" value="<%= post.title %>">
+			 		</h3>
+			 		<p>
+			 			内容：<textarea name="content" id="" cols="30" rows="10"><%= post.content %></textarea>
+			 		</p>
+			 		<input type="submit" value="修改">
+				</form>
+		 		
+			<li>
+		</ul>
+		
+	</div>
+</div>

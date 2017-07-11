@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title><%- blog.title %></title>
+</head>
+<link rel="stylesheet" href="/css/index.css">
+<body>
+	<div class="container">
+		<div class="user">
+			<div class="user_img_name">
+				<div class="avator">
+					<% if(user){ %>
+						<img src="/img/<%= user.avator %>" alt="">
+					<% } else{ %>
+						<p>未登录</p>
+					<% } %>
+				</div>
+				<p class="user_name">
+					<% if(user){ %>
+						<%= user.name %>
+					<% } %>
+				</p>
+			</div>
+			<div class="note">
+				<% if(success){ %>
+					<span class="success"><%= success %></span>
+				<% } %>
+				<% if(error){ %>
+					<span class="error"><%= error %></span>
+				<% } %>
+			</div>
+			<ul>
+				<% if(!user){ %>
+				<li><a href="/signin">登录</a></li>
+				<li><a href="/signup">注册</a></li>
+				<% } %>
+				<li><a href="/posts">文章</a></li>
+				<% if(user){ %>
+					<li><a href="/posts/create">发表文章</a></li>
+					<li><a href="/signout">登出</a></li>
+				<% } %>
+			</ul>
+		</div>
+	</div>

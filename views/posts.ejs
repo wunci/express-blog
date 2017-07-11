@@ -1,0 +1,52 @@
+<%- include('header') %>
+<div class="container ">
+	
+	<div class="post_list">
+		<ul>
+			<li>
+				<a class="post_list_img" href="/posts?author=<%= post.author %>"> <img class="user_img" src="/img/<%= post.avator %>" alt=""></a>
+				<h3>
+		 			<span><%= post.title %></span>
+		 		</h3>
+		 		<p>
+		 			<span><%= post.content %></span>
+		 		</p>
+		 		<p>评论数：<%= commentsLength %></p>
+		 		<% if(user && user._id.toString() == post.author.toString()){  %>
+		 			<a href="/posts/<%= post._id %>/edit">编辑</a>
+		 			<a href="/posts/<%= post._id %>/remove">删除</a>
+	 			<% } %>
+			<li>
+		</ul>
+		<div class="comment_list">
+			
+				<% comments.forEach(function(comment){ %>
+					<div>
+						<img src="/img/<%= comment.avator %>" alt="">
+						<p>用户名：<%= comment.username %> </p>
+						<p>评论内容：<%= comment.content %></p>
+					<% if(user && user._id.toString() === comment.author.toString()) { %>
+		 				<a href="/posts/<%= post._id %>/comment/<%= comment._id %>/remove">删除</a>
+		 			<% } %>
+					</div>
+				<% }) %>
+				
+			
+		</div>
+		<% if(user){ %>
+ 		<div class="comment">
+			<p>留言</p>
+			<form method="post" action="/posts/<%= post._id %>/comment">
+				<textarea name="content" id="" cols="30" rows="10"></textarea>
+				<input type="submit" value="确认">
+			</form>
+		</div>	
+		<% } %>
+	</div>
+</div>
+
+
+
+
+
+<%- include('footer') %>

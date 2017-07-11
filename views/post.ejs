@@ -1,0 +1,30 @@
+<%- include('header') %>
+<div class="container ">
+	
+	<div class="post_list">
+		<ul>
+			<% posts.forEach(function (post) { %>
+			<li>
+				<a class="post_list_img" href="/posts?author=<%= post.author %>"> <img class="user_img" src="/img/<%= post.avator %>" alt=""></a>
+				<a href="/posts/<%= post._id %>">
+			 		<h3>
+			 			<span><%= post.title %></span>
+			 		</h3>
+			 		<p>
+			 			<span><%= post.content %></span>
+			 		</p>
+
+			 		<p>时间:<%= post.date %></p>
+			 		<p>浏览:<%= post.pv %></p>
+		 		</a>
+		 	</li>
+			<% }) %>
+		</ul>
+	</div>
+</div>
+
+
+
+
+
+<%- include('footer') %>
