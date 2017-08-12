@@ -12,15 +12,15 @@ node+express+mongoose
   然后 mongod.exe --dbpath C:\data    ps：C:\data是你存数据的地址
 ```
 
-```
+```js
 $ cnpm i supervisor
 ```
 
-```
+```js
 $ cnpm i
 ```
 
-```
+```js
 $ supervisor --harmony index
 ```
 
