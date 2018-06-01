@@ -4,7 +4,7 @@ node+express+mongoose
 
 > 预览 
 
-![](http://oswpupqu5.bkt.clouddn.com/expressblog.gif)
+![](http://www.wclimb.site/cdn/expressblog.gif)
 
 启动数据库
 ```
